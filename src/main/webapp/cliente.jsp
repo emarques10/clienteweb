@@ -7,6 +7,16 @@
 <title>Insert title here</title>
 </head>
 <body>
+<div>
+	<% 
+	Object msg = request.getAttribute("msg");
+	if (msg != null){
+		String msgStr = (String)msg;
+		out.print(msg);
+	}
+	%>
+</div>
+
 <form method="post" action="cliente">
 	Name: <input type="text" value="" name="email"/>
 

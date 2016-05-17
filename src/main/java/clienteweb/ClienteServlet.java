@@ -59,8 +59,14 @@ public class ClienteServlet extends HttpServlet {
 		
 		
 		//System.out.println("Chamou pelo metodo POST");
-		resp.setCharacterEncoding("UTF-8");
-		resp.getWriter().println("Chamou pelo método POST enviando o email: "+email);
+		RequestDispatcher dispatcher = req.getRequestDispatcher("cliente.jsp");
+		req.setAttribute("msg", "Cadastrado com Sucesso!");
+		req.setAttribute("lista", lista);
+		dispatcher.forward(req, resp);
+		
+		//resp.sendRedirect("cliente");
+		//resp.setCharacterEncoding("UTF-8");
+		//resp.getWriter().println("Chamou pelo método POST enviando o email: "+email);
 	}
 	
 	@Override
